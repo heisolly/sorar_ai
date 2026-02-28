@@ -542,7 +542,10 @@ class _ScenarioCardsScreenState extends State<ScenarioCardsScreen>
                     child: SvgPicture.asset(
                       'assets/handdraws/undraw_heart-fun.svg',
                       width: 120,
-                      colorFilter: ColorFilter.mode(colors.last, BlendMode.srcIn),
+                      colorFilter: ColorFilter.mode(
+                        colors.last,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
@@ -797,10 +800,10 @@ class _ScenarioCardsScreenState extends State<ScenarioCardsScreen>
                     ),
                     Text(
                       'Unlimited, unpredictable scenarios. You set the scene.',
-                        style: GoogleFonts.inter(
-                          fontSize: 12,
-                          color: AppColors.textSecondary,
-                        ),
+                      style: GoogleFonts.inter(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                   ],
                 ),
@@ -868,12 +871,10 @@ class _ScenarioCardsScreenState extends State<ScenarioCardsScreen>
       child: PressableScale(
         onPressed: () => _launch(pack),
         child: Container(
+          decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: isLocked ? AppColors.border : AppColors.border,
-              width: 1.5,
-            ),
+            border: Border.all(color: AppColors.border, width: 1.5),
             boxShadow: isLocked
                 ? []
                 : [
@@ -1078,7 +1079,7 @@ class _ScenarioCardsScreenState extends State<ScenarioCardsScreen>
           ),
         ),
       ),
-    )
+    );
   }
 
   Widget _buildMiniMascot(Map<String, dynamic> pack) {
